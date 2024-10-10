@@ -35,7 +35,7 @@ function make() {
     document.getElementById('rrlogo').classList.add('tada');
 
     let ctx = document.querySelector("canvas").getContext("2d");
-    const dashLen = 220;
+    let dashLen = 220;
     let dashOffset = dashLen;
     let speed = 20;
     let x = 35;
@@ -78,6 +78,13 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('rrlogo').addEventListener('click', function() {
     window.counter += 1;
     make();
+    alert(`You tried to open the gate ${window.counter} time${window.counter === 1 ? "" : "s"}!`);
+
+    // If ~ If ~ If ~ If ~~~
+    // You don't want to get hints here... do you?
+    // Good Luck :)
+    //
+    // - by Karu
     if (window.counter == randomValues[0]) cipher = _____(cipher, ______________);
     if (window.counter == randomValues[14]) cipher = _______________(cipher, 1);
     if (window.counter == randomValues[24]) cipher = _______________(cipher, 1);
@@ -108,6 +115,5 @@ document.addEventListener("DOMContentLoaded", function() {
     if (window.counter == randomValues[22]) cipher = _______________(cipher, 1);
     if (window.counter == randomValues[16]) cipher = _____(cipher, __________);
     if (window.counter == randomValues[26]) cipher = _____(cipher, ___________);
-    
   });
 });
