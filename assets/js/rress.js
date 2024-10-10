@@ -35,7 +35,7 @@ function make() {
     document.getElementById('rrlogo').classList.add('tada');
 
     let ctx = document.querySelector("canvas").getContext("2d");
-    const dashLen = 220;
+    let dashLen = 220;
     let dashOffset = dashLen;
     let speed = 20;
     let x = 35;
@@ -62,9 +62,6 @@ function make() {
         if (i < txt.length) requestAnimationFrame(loop);
       }
     })();
-
-    if (cipher[0] == first)
-      alert(_______(`:,%6<,2\x10"\x06B@0\x11:6?[!\x1B>%3;>\x03\x1F\x1B?\f6+\x15\x1B7\x0F+,)\x0F1*\x1C\x124R\x05\n9\x125W78\x10\x06644\x020\x01\x145"\x01*\x19&\x1BJ\x06 \x01\x03T;.\x17'`));
   }
   else {
     document.getElementById('clicks').textContent = 10000 - window.counter;
@@ -78,6 +75,13 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('rrlogo').addEventListener('click', function() {
     window.counter += 1;
     make();
+    alert(`You tried to open the gate ${window.counter} time${window.counter === 1 ? "" : "s"}!`);
+
+    // If ~ If ~ If ~ If ~~~
+    // You don't want to get hints here... do you?
+    // Good Luck :)
+    //
+    // - by Karu
     if (window.counter == randomValues[0]) cipher = _____(cipher, ______________);
     if (window.counter == randomValues[14]) cipher = _______________(cipher, 1);
     if (window.counter == randomValues[24]) cipher = _______________(cipher, 1);
@@ -108,6 +112,5 @@ document.addEventListener("DOMContentLoaded", function() {
     if (window.counter == randomValues[22]) cipher = _______________(cipher, 1);
     if (window.counter == randomValues[16]) cipher = _____(cipher, __________);
     if (window.counter == randomValues[26]) cipher = _____(cipher, ___________);
-    
   });
 });
