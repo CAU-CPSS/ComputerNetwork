@@ -1,25 +1,22 @@
-import { _______________, _______ } from './crypt.js';
-
-let cipher = `:)\x1FV4Y\x14\x0060B\x07:\x02D1?()\r=2;\b>\x00\x03\x115.) *\v3\x05&<9\x07=\x02*\\8&#\x1A=\x1F\x07\b9\x02\x10\x04=\x19G\x021:\x1C."\x01*\x19&\x18';\x15-5N8[\x10\t<\x19\x15=7?)S9(\x10\x002 \x151<\x12\x14. \x01C[;\t'\f>\x02\x13Q\x10/=8' OV`;
+import { _______________, _______, _____, __________, ___________, ____________, _____________, ______________  } from './crypt.js';
 
 window.counter = 0;
 
-let c;
+let cipher = `:)\x1FV4Y\x14\x0060B\x07:\x02D1?()\r=2;\b>\x00\x03\x115.) *\v3\x05&<9\x07=\x02*\\8&#\x1A=\x1F\x07\b9\x02\x10\x04=\x19G\x021:\x1C."\x01*\x19&\x18';\x15-5N8[\x10\t<\x19\x15=7?)S9(\x10\x002 \x151<\x12\x14. \x01C[;\t'\f>\x02\x13Q\x10/=8' OV`;
 const first = 'C';
 
 function generateRandomArray() {
-    const randomArray = [];
-    randomArray[0] = Math.floor(Math.random() * 2000);
-    
-    for (let i = 1; i < 10; i++) {
-        const min = randomArray[i - 1];
-        randomArray[i] = Math.floor(Math.random() * (10000 - min)) + min;
-    }
-    for (let i = 10; i < 20; i++) {
-        const min = randomArray[i - 1];
-        randomArray[i] = Math.floor(Math.random() * (10000 - min)) + min;
-    }
-    return randomArray;
+  const arr = [];
+  arr[0] = Math.floor(Math.random() * 1234);
+
+  for (let i = 1; i < 10; i++) 
+      arr[i] = arr[i - 1] + 1 + Math.floor(Math.random() * ((10000 - 654*(10-i)) - arr[i - 1] - 1));
+  
+  arr[10] = 10001 + Math.floor(Math.random() * 500);
+  for (let i = 11; i < 30; i++)
+      arr[i] = arr[i - 1] + 1 + Math.floor(Math.random() * 1000);
+
+  return arr;
 }
 
 function make() {
@@ -30,13 +27,20 @@ function make() {
   else if (100 < mod && mod <= 200) document.getElementById('rrlogo')
     .style.opacity = ((mod - 100) * 0.8 + 20) + '%';
 
+  // If clicked more than 10000 times?
   if (10000 < window.counter) {
     if (cipher[0] != first)
       alert(_______(`:,%3>,:\n55\x05\x079\x0F!*;\x03\x1FP=53;<\x00H\x1B?\x00).\x1657D7\x11=\x183(&G43'\x1A>\x10\b)#\x126\x01>Q\nR>X)1?\x01\x10^1\b'\b!\x00H\n<[=1:%3\x19!/)S=\x1C*\x0037?/#,>*0?G\x02>5J\x07>*\x1B\x16\x149&\x024\b'\x06>\x049X6Y\x04!?2+:9\x12\x07\x16;[)\x1A:\x1B<:#\x10!$9\x01KZ\x12%\x1D\x1C;->%>\x01"\f86\x15\x009Y=U;:""=\x1B7\x0F;\x12)\x168\x02&\x066\b\x15\x1D),)V'(*\x0F8#\x19\x13;[!\x02"\x1269(";\f;:>\x17;>:'>\t#"%\x01%/\x13/>\x01:#\x15X:*\x17N=<\x18>>\x19BY:<@\x15?/5\\>\v\x1D\x065*5\t;\x1C5&*0\x15-:\x12@\x18=\x01\x14\x024$+"<+)0#(G\x1124<\x030\x039Q<\x03"\x11?\x1B\x15\x13)-)T:[\x00\x0093\x19\x0F2/%8#\x01>[7'K\b`));
 
     document.getElementById('rrlogo').classList.add('tada');
-    let ctx = document.querySelector("canvas").getContext("2d"),
-    dashLen = 220; dashOffset = dashLen; speed = 20; x = 35; i = 0; txt = cipher;
+
+    let ctx = document.querySelector("canvas").getContext("2d");
+    const dashLen = 220;
+    let dashOffset = dashLen;
+    let speed = 20;
+    let x = 35;
+    let i = 0;
+    let txt = cipher;
 
     ctx.font = "50px Comic Sans MS, cursive, TSCu_Comic, sans-serif"; 
     ctx.lineWidth = 5; ctx.lineJoin = "round"; ctx.globalAlpha = 2/3;
@@ -74,25 +78,36 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('rrlogo').addEventListener('click', function() {
     window.counter += 1;
     make();
-    if (window.counter == randomValues[0]) c = _____(cipher, ______________);
-    else if (window.counter == randomValues[5]) c = _______________(c, 1);
-    else if (window.counter == randomValues[14]) c = _______________(c, 1);
-    else if (window.counter == randomValues[2]) c = _____(c, _____________);
-    else if (window.counter == randomValues[9]) cipher = _______________(c, 1);
-    else if (window.counter == randomValues[4]) c = _____(c, ____________);
-    else if (window.counter == randomValues[18]) c = _____(c, ___________);
-    else if (window.counter == randomValues[7]) c = _______________(c, 1);
-    else if (window.counter == randomValues[6]) c = _____(c, ___________);
-    else if (window.counter == randomValues[3]) c = _______________(c, 1);
-    else if (window.counter == randomValues[10]) c = _____(c, ____________);
-    else if (window.counter == randomValues[17]) c = _______________(c, 1);
-    else if (window.counter == randomValues[1]) c = _______________(c, 1);
-    else if (window.counter == randomValues[11]) c = _______________(c, 1);
-    else if (window.counter == randomValues[12]) c = _____(c, ___________);
-    else if (window.counter == randomValues[19]) c = _____(c, __________);
-    else if (window.counter == randomValues[13]) c = _____(c, __________);
-    else if (window.counter == randomValues[16]) c = _____(c, __________);
-    else if (window.counter == randomValues[8]) c = _____(c, __________);
-    else if (window.counter == randomValues[15]) c = _____(c, ___________);
+    if (window.counter == randomValues[0]) cipher = _____(cipher, ______________);
+    if (window.counter == randomValues[14]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[24]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[2]) cipher = _____(cipher, _____________);
+    if (window.counter == randomValues[27]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[28]) cipher = _____(cipher, ___________);
+    if (window.counter == randomValues[4]) cipher = _____(cipher, ____________);
+    if (window.counter == randomValues[18]) cipher = _____(cipher, ___________);
+    if (window.counter == randomValues[9]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[6]) cipher = _____(cipher, ___________);
+    if (window.counter == randomValues[8]) cipher = _____(cipher, __________);
+    if (window.counter == randomValues[3]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[7]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[5]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[11]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[21]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[12]) cipher = _____(cipher, ___________);
+    if (window.counter == randomValues[17]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[13]) cipher = _____(cipher, __________);
+    if (window.counter == randomValues[19]) cipher = _____(cipher, __________);
+    if (window.counter == randomValues[15]) cipher = _____(cipher, ___________);
+    if (window.counter == randomValues[1]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[10]) cipher = _____(cipher, ____________);
+    if (window.counter == randomValues[25]) cipher = _____(cipher, ____________);
+    if (window.counter == randomValues[23]) cipher = _____(cipher, _____________);
+    if (window.counter == randomValues[20]) cipher = _____(cipher, _____________);
+    if (window.counter == randomValues[29]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[22]) cipher = _______________(cipher, 1);
+    if (window.counter == randomValues[16]) cipher = _____(cipher, __________);
+    if (window.counter == randomValues[26]) cipher = _____(cipher, ___________);
+    
   });
 });
