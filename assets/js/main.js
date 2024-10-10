@@ -121,6 +121,18 @@
 
 				});
 
+			var toQuestion1 = $('#toQuestion1');
+			toQuestion1.click(function() {
+				event.preventDefault();
+				alert('hi');
+				if (confirm("경고! 이 앞은 어떤 위험이 도사릴지 모릅니다.\n"
+					+ "계속하시겠습니까?"
+				) == true) {
+					// move to ./danger/rollingress.html
+					window.location.href = "./danger/rollingress.html";
+				}
+			});
+
 		// Title Bar.
 			$titleBar = $(
 				'<div id="titleBar">' +
