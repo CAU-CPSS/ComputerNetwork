@@ -1,3 +1,6 @@
+// 문제와는 관련 없는 파일입니다.
+// 암호 해독 문제는 출제하지 않았으니 괜히 힘빼지 말아요 ㅎㅎ
+
 const _______________ = (________, _________) => _________ ? decodeURIComponent(escape(window.atob(________))) : window.btoa(unescape(encodeURIComponent(________)))
 const __________ = _______________('andsZWU=', 1);
 const ___________ = _______________('dGpkZ2hrczk5NA==', 1);
