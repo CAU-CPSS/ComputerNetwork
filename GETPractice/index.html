@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GET examples</title>
+    <style> 
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: "Lato", sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        a {
+            -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+            -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+            -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+            transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+            border-bottom: solid 1px #e4e4e4;
+            color: #4acaa8;
+            text-decoration: none;
+        }
+        a:hover {
+            border-bottom-color: transparent;
+            color: #ff9999 !important;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span style="color: #4acaa8;">GET 파라미터 값</span></h1>
+    </header>
+    <main>
+        <p id="nameDisplay">이름이 여기에 표시됩니다.</p>
+        <p id="majorDisplay">학과가 여기에 표시됩니다.</p>
+    </main>
+    <script>
+        // URL 파라미터에서 name 값을 가져오는 함수
+        function getQueryParameter(query) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(query);
+        }
+
+        // name 파라미터를 가져와 페이지에 표시
+        const name = getQueryParameter('name');
+        if (name) {
+            document.getElementById('nameDisplay').textContent = `Name: ${name}`;
+        } else {
+            document.getElementById('nameDisplay').textContent = "이름이 지정되지 않았습니다.";
+        }
+
+
+        // name 파라미터를 가져와 페이지에 표시
+        const major = getQueryParameter('major');
+        if (major) {
+            document.getElementById('majorDisplay').textContent = `Major: ${major}`;
+        } else {
+            document.getElementById('majorDisplay').textContent = "학과가 지정되지 않았습니다.";
+        }
+    </script>
+    <footer>
+        <p>&copy; 2024 CAU CPSS Lab.</p>
+    </footer>
+</body>
+</html>
